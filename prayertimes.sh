@@ -1,26 +1,26 @@
-helloPT="`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/  -O - | sed -n 's/.*<span class="todayPrayerTime">\([^<]*\).*/\1/p'`" 
+uas="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36"
+
+helloPT="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/.*<span class="todayPrayerTime">\([^<]*\).*/\1/p'`" 
 
 helloPT2=`echo "$helloPT" | sed 's/$/ |/'`
 
-
-
 #echo "$helloPT"
 
-helloN="`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/ -O - | sed -n 's/underlined clickable">\([^<]*\).*/\1/p'`"
+helloN="`wget -q -U "$uas" https://www.islamicfinder.org/ -O - | sed -n 's/underlined clickable">\([^<]*\).*/\1/p'`"
 
 helloN2=`echo "$helloN" | awk '{print $2}'| sed 's/^/| /'`
 
-Current1="`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/  -O - | sed -n 's/<span class="xxl uppercase prayer-margin-right">\([^<]*\).*/\1/p'`"
+Current1="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/<span class="xxl uppercase prayer-margin-right">\([^<]*\).*/\1/p'`"
 
-Current2="`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/  -O - | sed -n 's/<span id="current-city" class="text-lightest m-r-xs">\([^"<]*\).*/\1/p'`"
+Current2="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/<span id="current-city" class="text-lightest m-r-xs">\([^"<]*\).*/\1/p'`"
 
 echo ""
 
-Date2="`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/  -O - | sed -n 's/<p id="hijri-date" class="xs medium bold">\([^"<]*\).*/\1/p'`"
+Date2="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/<p id="hijri-date" class="xs medium bold">\([^"<]*\).*/\1/p'`"
 
-Date1="`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/  -O - | sed -n 's/<p id="greg-date" class="text-lightest xs">\([^"<]*\).*/\1/p'`"
+Date1="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/<p id="greg-date" class="text-lightest xs">\([^"<]*\).*/\1/p'`"
 
-Nexto=`wget -q -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36" https://www.islamicfinder.org/  -O - | awk '$1=$1' | grep -A1 --after-context=02 clockdiv | grep : | rev | cut -c7- | rev`
+Nexto=`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | awk '$1=$1' | grep -A1 --after-context=02 clockdiv | grep : | rev | cut -c7- | rev`
 
 
 
