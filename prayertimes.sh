@@ -1,3 +1,5 @@
+#!/bin/bash
+
 uas="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36"
 
 helloPT="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/.*<span class="todayPrayerTime">\([^<]*\).*/\1/p'`" 
