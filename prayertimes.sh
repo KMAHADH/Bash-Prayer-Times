@@ -1,5 +1,53 @@
 #!/bin/bash
 
+
+
+      #################################################################################
+     ##								                    ##
+    ##  A BASH shell script to get you the days' Islamic Prayer Times in Terminal  ##
+   ##                                                                             ##
+  ##  Created by Khwaja Mahad Haq (KMAHADH)                                      ##
+ ##                                                                             ##
+#################################################################################
+
+checkwget=`command -v wget`
+checksed=`command -v sed`
+checkpr=`command -v pr`
+
+if [ -z "$checkwget" ]
+then
+      det1='\e[91m"wget" doesnot exist on the system!\e[39m'
+      detall1='Please install "wget" on the system'
+      echo $det1
+      echo $detall1
+      exit
+else
+echo -ne ""
+fi
+
+if [ -z "$checksed" ]
+then
+      det1='\e[91m"sed" doesnot exist on the system!\e[39m'
+      detall1='Please install "sed" on the system'
+      echo $det1
+      echo $detall1
+      exit
+else
+echo -ne ""
+fi
+
+if [ -z "$checkpr" ]
+then
+      det1='\e[91m"pr" doesnot exist on the system!\e[39m'
+      detall1='Please install "pr" on the system'
+      echo $det1
+      echo $detall1
+      exit
+else
+echo -ne ""
+fi
+
+
 uas="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36 OPR/56.0.3051.36"
 
 helloPT="`wget -q -U "$uas" https://www.islamicfinder.org/  -O - | sed -n 's/.*<span class="todayPrayerTime">\([^<]*\).*/\1/p'`" 
