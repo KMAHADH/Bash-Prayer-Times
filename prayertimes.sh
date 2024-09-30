@@ -4,7 +4,7 @@
 
       #################################################################################
      ##								                              ##
-    ##  A BASH shell script to get you the days' Islamic Prayer Times in Terminal  ##
+    ##  A BASH shell script to get you the days' Prayer Times in Terminal          ##
    ##                                                                             ##
   ##  Created by Khwaja Mahad Haq (KMAHADH)                                      ##
  ##                                                                             ##
